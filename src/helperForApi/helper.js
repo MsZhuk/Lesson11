@@ -11,7 +11,7 @@ export class SecretToken {
           "Accept": "application/json",
           "authorization": "Basic YWRtaW46cGFzc3dvcmQ="
         }
-      });
+      })
   
       let secretBody = await secretRequest.headers();
       return (secretBody['x-auth-token'])

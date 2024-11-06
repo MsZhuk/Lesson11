@@ -136,7 +136,7 @@ test.describe.only("API challenge", () => {
       description: expect.any(String)
     }));
 
-  })
+  });
 
 
   test("Создание задачи с некорретным статусом POST /todos @POST", async ({ request }) => {
@@ -195,7 +195,7 @@ test.describe.only("API challenge", () => {
     expect(response.status()).toBe(400);
     expect(headers).toEqual(expect.objectContaining({ 'x-challenger': token}));
 
-  })
+  });
   
 
   test("Создание задачи с полями заголовка и описания максимальной длины POST /todos @POST", async ({ request }) => {
@@ -242,7 +242,7 @@ test.describe.only("API challenge", () => {
     expect(response.status()).toBe(413);
     expect(headers).toEqual(expect.objectContaining({ 'x-challenger': token}));
 
-  })
+  });
 
 
   test("Создание задачи, в которой содержатся нераспознанные поля POST /todos @POST", async ({ request }) => {
@@ -330,7 +330,7 @@ test.describe.only("API challenge", () => {
     expect(response.status()).toBe(404);
     expect(headers).toEqual(expect.objectContaining({ 'x-challenger': token}));
 
-  })
+  });
 
   test("Обновление существующей задачи PUT /todos @PUT", async ({ request }) => {
     let response = await request.put(`${URL}todos/${firstId}`, {
@@ -357,7 +357,7 @@ test.describe.only("API challenge", () => {
       description: expect.any(String)
     }));
 
-  })
+  });
 
   test("Частичное обновление существующей задачи (только название) PUT /todos @PUT", async ({ request }) => {
     let response = await request.put(`${URL}todos/${secondId}`, {
@@ -418,7 +418,7 @@ test("Обновление существующей задачи без назв
   
     expect(response.status()).toBe(400);
     expect(headers).toEqual(expect.objectContaining({ 'x-challenger': token}));
-  })
+  });
 
 
   test("Удаление задачи DELET /todos @DELET", async ({ request }) => {
@@ -449,7 +449,7 @@ test("Обновление существующей задачи без назв
     expect(response.status()).toBe(200);
     expect(headers).toEqual(expect.objectContaining({ 'x-challenger': token}));
 
-  })
+  });
 
   test("Выполнить запрос GET в xml /todo @GET", async ({ request }) => {
     let response = await request.get(`${URL}todos`, {
@@ -1068,7 +1068,7 @@ test("Обновление существующей задачи без назв
     expect(response.status()).toBe(200);
     expect(headers).toEqual(expect.objectContaining({'x-challenger': token}));
 
-  })
+  });
 
 
   test("Выполнить запрос DELETE все записи /todos/{id} @DELETE", async ({ request }) => {
@@ -1112,7 +1112,7 @@ test("Обновление существующей задачи без назв
 
       expect(response.status()).toBe(201);
       expect(headers).toEqual(expect.objectContaining({'x-challenger': token}));
-    }
+    };
 
     let response = await request.post(`${URL}todos`, {
       headers: {
